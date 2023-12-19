@@ -2,9 +2,27 @@
   "name": "@iberofonia/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "ng": "nx",
+    "start": "nx serve iberofonia",
+    "build": "nx build iberofonia",
+    "test": "nx test",
+    "dep-graph": "nx dep-graph",
+    "nxcc": "nx clear-cache",
+    "hard-reset": "rm -rf .angular/ && rm -rf node_modules/.cache/ && rm -rf dist/ && rm -rf tmp/ npm run nxcc",
+    "prepare": "husky install",
+    "e2e-watch": "nx e2e iberofonia-e2e  --host 0.0.0.0 --port 4200 --disable-host-check --watch",
+    "e2e": "sh ./cicd/scripts/npm/update-session.sh ${1} && nx e2e iberofonia-e2e  --host 0.0.0.0 --port 4200 --disable-host-check",
+    "compodoc": "npx compodoc -p tsconfig.doc.json -s "
+  },
+  "lint-staged": {
+    "*.{js,json,css,scss,md,ts,html}": [
+      "nx format:write --uncommitted"
+    ]
+  },
   "private": true,
   "dependencies": {
+    "@angular-architects/ddd": "^17.0.3",
     "@angular/animations": "~17.0.0",
     "@angular/common": "~17.0.0",
     "@angular/compiler": "~17.0.0",

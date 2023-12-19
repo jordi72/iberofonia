@@ -1,4 +1,27 @@
 {
+    "npmScope": "iberofonia",
+    "affected": {
+      "defaultBase": "dev"
+    },
+    "cli": {
+      "packageManager": "npm",
+      "cache": false
+    },
+    "tasksRunnerOptions": {
+      "default": {
+        "runner": "nx/tasks-runners/default",
+        "options": {
+          "cacheableOperations": [
+            "build",
+            "lint",
+            "test",
+            "e2e",
+            "build-storybook"
+          ]
+        }
+      }
+    },
+    "defaultProject": "iberofonia",
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "targetDefaults": {
     "build": {
