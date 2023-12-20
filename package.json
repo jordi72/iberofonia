@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "nx",
-    "start": "nx serve iberofonia",
+    "start": "nx serve iberofonia --host 0.0.0.0",
     "build": "nx build iberofonia",
     "test": "nx test",
     "dep-graph": "nx dep-graph",
